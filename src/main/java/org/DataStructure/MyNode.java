@@ -1,5 +1,3 @@
-package org.DataStructure;
-
 public class MyNode<T> implements INode<T> {
 	private T data;
 	private INode next;

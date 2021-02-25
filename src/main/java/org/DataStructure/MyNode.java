@@ -1,34 +1,36 @@
-package org.DataStructure;
+public class MyNode<T> implements INode<T>{
+	private T data;
+	private INode next;
 
-public class MyNode<T>
-{
-    private T data;
-    private MyNode next;
-    MyNode(){}
+	MyNode() {
+	}
 
-    // Constructor with node fields
-    public MyNode(T key) {
-        this.setData(data);
-        this.setNext(null);
-    }
+	// Constructor with node fields
+	public MyNode(T data) {
+		this.setData(data);
+		this.setNext(null);
+	}
+	@Override
+	public  T getData() {
+		return data;
+	}
+	@Override
+	public void setData(T data) {
+		this.data = data;
+	}
 
-    public T getData() {
-        return data;
-    }
+	public INode getNext() {
+		return next;
+	}
 
-    public void setData(T data) {
-        this.data = data;
-    }
+	public void setNext(INode next) {
+		this.next = next;
+	}
 
-    public MyNode getNext() {
-        return next;
-    }
+	/* print welcome message */
+	public void printWelcomeMessage() {
+		System.out.println("Welcome to the Data Structure Problem");
+	}
 
-    public void setNext(MyNode next) {
-        this.next = next;
-    }
-
-    public void printWelcomeMessage() {
-        System.out.println("Welcome to the Data Structure Problem");
-    }
+	
 }

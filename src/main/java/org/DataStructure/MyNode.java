@@ -1,34 +1,22 @@
 package org.DataStructure;
 
-public class MyNode<T>
-{
-    private T data;
-    private MyNode next;
-    MyNode(){}
+import org.junit.Assert;
+import org.junit.Test;
 
-    // Constructor with node fields
-    public MyNode(T key) {
-        this.setData(data);
-        this.setNext(null);
-    }
-
-    public T getData() {
-        return data;
-    }
-
-    public void setData(T data) {
-        this.data = data;
-    }
-
-    public MyNode getNext() {
-        return next;
-    }
-
-    public void setNext(MyNode next) {
-        this.next = next;
-    }
-
-    public void printWelcomeMessage() {
-        System.out.println("Welcome to the Data Structure Problem");
-    }
+public class MyLinkedListTest {
+	/* Created Simple Linked List and Added to the First Position */
+	@Test
+	public void GivenThreeNumbersWhenAddedToLinkedListShouldAddedtoTop() {
+		MyNode<Integer> myFirstNode = new MyNode<>(70);
+		MyNode<Integer> mySecondNode = new MyNode<>(30);
+		MyNode<Integer> myThirdNode = new MyNode<>(56);
+		MyLinkedList<Integer> myLinkedList = new MyLinkedList<Integer>();
+		myLinkedList.addFirst(myFirstNode);
+		myLinkedList.addFirst(mySecondNode);
+		myLinkedList.addFirst(myThirdNode);
+		myLinkedList.printMyNodes();
+		boolean result = (myLinkedList.head.equals(myThirdNode) && myLinkedList.head.getNext().equals(mySecondNode)
+				&& myLinkedList.tail.equals(myFirstNode));
+		Assert.assertEquals(true, result);
+	}
 }
